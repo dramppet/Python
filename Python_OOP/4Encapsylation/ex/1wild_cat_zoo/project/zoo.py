@@ -38,7 +38,7 @@ class Zoo:
             if worker.name == worker_name:
                 self.workers.remove(worker)
                 return f"{worker_name} fired successfully"
-            return f"There is no {worker_name} in the zoo"
+        return f"There is no {worker_name} in the zoo"
 
     def pay_workers(self):
         total_salaries = 0
@@ -97,7 +97,7 @@ class Zoo:
 
         result += f"----- {total_cheetahs} Cheetahs:\n"
         cheetahs_result = "\n".join(cheetahs_info)
-        result += cheetahs_result + '\n'
+        result += cheetahs_result
 
         return result
 
@@ -135,6 +135,6 @@ class Zoo:
 
         result += f"----- {total_vets} Vets:\n"
         vets_result = "\n".join(vets_info)
-        result += vets_result + '\n'
+        result += vets_result
 
         return result
