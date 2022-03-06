@@ -2,5 +2,7 @@ from project.animal import Animal
 
 
 class Cheetah(Animal):
-    def __init__(self, name, gender, age, money_for_care):
-        super().__init__(name, gender, age, 60)
+    MONEY_FOR_CARE = 60
+
+    def __init__(self, name, gender, age):
+        super().__init__(name, gender, age, Cheetah.MONEY_FOR_CARE)
