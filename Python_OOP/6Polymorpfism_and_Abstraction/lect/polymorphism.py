@@ -1,40 +1,31 @@
 import math
 
+
 class Shape:
-    def calculate_area(self):
+    def claculate_area(self):
         pass
 
 
 class Triangle(Shape):
-    def __init__(self, h, side):
-        self.h = h
+    def __init__(self, side, h):
         self.side = side
+        self.h = h
 
-    def calculate_area(self):
-        return self.h * self.side
+    def claculate_area(self):
+        return self.side * self.h
 
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def calculate_area(self):
-        return self.radius * self.radius * math.pi
-
-class Squ(Shape):
+class Square(Shape):
     def __init__(self, side):
         self.side = side
 
-    def calculate_area(self):
-        return self.side * self.side
+    def claculate_area(self):
+        return math.pow(self.side, 2)
 
 
-t = Triangle(2, 3)
-c = Circle(5)
-t1 = Triangle(8, 6)
-s = Squ(5)
-
-shapes = [t, c, t1, s]
+shapes = [Triangle(5, 8), Square(9)]
 
 for shape in shapes:
-    print(shape.calculate_area())
+    print(shape.claculate_area())
+
+
