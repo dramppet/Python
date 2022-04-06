@@ -1,10 +1,7 @@
-max_num = int(input())
+max_sum = int(input())
 
-sum_n = 0
+counter = 1
 
-while True:
-    sum_n = 2*sum_n + 1
-    if sum_n <= max_num:
-        print(sum_n)
-    else:
-        break
+while counter <= max_sum:
+    print(counter)
+    counter = 2 * counter + 1
