@@ -1,0 +1,2 @@
+name_student = input()
+

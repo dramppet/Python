@@ -9,4 +9,4 @@ while not input_line == 'NoMoreMoney':
     balance += amount
     print(f'Increase: {amount:.2f}')
     input_line = input()
-print(f'Total:{balance:.2f}')
+print(f'Total: {balance:.2f}')
