@@ -9,7 +9,6 @@ while not number_input == 'Stop':
     if curr_num <= min_number:
         min_number = curr_num
 
-
     number_input = input()
 
 print(min_number)
