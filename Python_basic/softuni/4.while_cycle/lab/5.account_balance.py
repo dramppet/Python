@@ -1,12 +1,12 @@
-bank_acc = input()
-total_acc  = 0
+input_line = input()
+balance = 0
 
-while not bank_acc == 'NoMoreMoney':
-    com = float(bank_acc)
-    if com < 0:
+while not input_line == 'NoMoreMoney':
+    amount = float(input_line)
+    if amount < 0:
         print('Invalid operation!')
         break
-    print('Increase: ',com)
-    total_acc += com
-    bank_acc = input()
-print(f'Total:{total_acc:.2f}')
+    balance += amount
+    print(f'Increase: {amount:.2f}')
+    input_line = input()
+print(f'Total:{balance:.2f}')
