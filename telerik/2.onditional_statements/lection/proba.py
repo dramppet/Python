@@ -9,8 +9,8 @@ number = int(input())
 #
 # print(result)
 
-#option 2
-
-result = 'even' if number % 2 == 0 else 'odd'
-
-print(result)
+# #option 2
+#
+# result = 'even' if number % 2 == 0 else 'odd'
+#
+# print(result)
