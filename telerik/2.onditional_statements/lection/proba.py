@@ -1,6 +1,10 @@
-a = 5
-b = 5
+age = int(input())
 
-are_equal = '' or 'dogs'
-
-print(are_equal)
+if age <= 4:
+    print('Beginner')
+elif age <= 8:
+    print('Intermedia')
+elif age <= 12:
+    print('High school')
+else:
+    print('University')
