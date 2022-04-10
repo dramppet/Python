@@ -1,10 +1,12 @@
-grade = int(input())
+number = int(input())
 
-if grade <= 4:
-    print('Beginner')
-elif grade <= 8:
-    print('Intermedia')
-elif grade <= 12:
-    print('High school')
-else:
-    print('University')
+# if number % 2 == 0:
+#     result = 'even'
+# else:
+#     result = 'odd'
+#
+# print(result)
+
+result = 'even' if number % 2 == 0 else 'odd'
+
+print(result)
