@@ -2,9 +2,30 @@ first = float(input())
 second = float(input())
 three = float(input())
 
-if first >= 1 and second >= 1 and three >= 1:
-    print('+')
-elif first == 0 or second == 0 or three == 0:
-    print('0')
+countNegativeNumber = 0
+countZeroNumber = 0
+sign = ''
+
+if first < 0:
+    countNegativeNumber += 1
+if second < 0:
+    countNegativeNumber += 1
+if three < 0:
+    countNegativeNumber +=1
+
+if first == 0:
+    countZeroNumber +=1
+if second == 0:
+    countZeroNumber += 1
+if three == 0:
+    countZeroNumber +=1
+
+if countNegativeNumber % 2 == 0 and countZeroNumber == 0:
+    sign = '+'
+elif countZeroNumber > 0:
+    sign = '0'
 else:
-    print('-')
+    sign = '-'
+
+
+print(sign)
