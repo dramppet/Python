@@ -1,6 +1,8 @@
-card = input()
+input_card = input()
 
-if card >= '2' and card < '11' or card == 'J' or card == 'Q' or card == 'K' or card == 'A':
+cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+if input_card in cards:
     print('yes')
 else:
     print('no')
