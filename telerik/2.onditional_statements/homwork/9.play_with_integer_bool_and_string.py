@@ -5,7 +5,7 @@ if input_choose == '1':
     print(int_type + 1)
 elif input_choose == '2':
     bool_type = input('Please enter a bool: ')
-    if bool_type == 'True':
+    if bool_type == 'True'.lower():
         print('False')
     else:
         print('True')
