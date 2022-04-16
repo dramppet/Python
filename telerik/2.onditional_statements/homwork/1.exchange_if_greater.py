@@ -1,5 +1,5 @@
 first = input()
-second = input()
+second = locale()
 
 if first > second:
     print(f'{second} {first}')
