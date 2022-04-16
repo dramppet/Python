@@ -1,6 +1,11 @@
-first = input()
-second = input()
-three = input()
+first = float(input())
+second = float(input())
+three = float(input())
 
-print(max(first,second,three))
+if first > second and first > three:
+    print(first)
+elif second > first and second > three:
+    print(second)
+else:
+    print(three)
 
