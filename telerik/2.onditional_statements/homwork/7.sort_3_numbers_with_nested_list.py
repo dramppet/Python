@@ -1,6 +1,6 @@
-first = input()
-second = input()
-three = second
+first = float(input())
+second = float(input())
+three = float(input())
 
 if first > second and first > three:
     if second > three:
