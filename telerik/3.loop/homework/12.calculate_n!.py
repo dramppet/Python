@@ -1,13 +1,23 @@
 n = int(input())
 k = int(input())
 
+count_n = 1
+count_k = 1
+
 sum_n = 1
 sum_k = 1
 
-for n_fac in range(1,n+1):
-    sum_n *= n_fac
+while True:
 
-for k_fac in range(1,k+1):
-    sum_k *= k_fac
+    if count_n > n and count_k > k:
+        break
 
-print(sum_n//sum_k)
+    if count_n < n + 1:
+        sum_n *= count_n
+        count_n+=1
+
+    if count_k < k  + 1:
+        sum_k *= count_k
+        count_k+=1
+
+print(sum_n // sum_k)
