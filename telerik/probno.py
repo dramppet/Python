@@ -1,25 +1,17 @@
 import sys
 
-count_horse = int(input())
+max_H = 0
+index = 0
 
-horse = []
+while True:
 
-for _ in range(count_horse):
-    single_horse = int(input())
-    horse.append(single_horse)
+    for i in range(8):
+        mounth_h = int(input())
 
+        if mounth_h > max_H:
+            max_H = mounth_h
+            index = i
+    max_H = 0
 
-int_min = sys.maxsize
-power = 0
+    print(index)
 
-for x in range(len(horse)):
-    first = horse[x]
-    next_x = x + 1
-    for next_x in range(next_x,len(horse)):
-        second = horse[next_x]
-        power = abs(first - second)
-
-        if power < int_min:
-            int_min = power
-
-print(int_min)
