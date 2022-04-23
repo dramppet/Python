@@ -22,4 +22,4 @@ for _ in range(count_number):
 print('min=',min_number)
 print('max=',max_number)
 print('sum=',sum_number)
-print(f'avg={(sum_number/count_number):.2f}')
+print(f'avg={sum_number/count_number:.2f}')
