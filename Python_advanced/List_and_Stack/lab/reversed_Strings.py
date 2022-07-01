@@ -5,5 +5,5 @@ reversed_stack = []
 for word in words:
     reversed_stack.append(word)
 
-print(reversed_stack)
-
+while reversed_stack:
+    print(reversed_stack.pop(),end='')
