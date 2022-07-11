@@ -10,6 +10,6 @@ def gen_vector(idx,vector,n):
 
 n = int(input())
 
-vector = [None] * n
+arr = [None] * n
 
-gen_vector(0,vector,n)
+gen_vector(0, arr, n)
