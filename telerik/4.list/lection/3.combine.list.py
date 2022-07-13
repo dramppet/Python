@@ -13,3 +13,4 @@ for x in range(range_new_list):
         position+=1
 
 print(*combine_list,sep=',')
+
