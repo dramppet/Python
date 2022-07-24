@@ -1,4 +1,4 @@
-from math import sqrt
+from math import sqrt,pow
 
 a = float(input())
 b = float(input())
