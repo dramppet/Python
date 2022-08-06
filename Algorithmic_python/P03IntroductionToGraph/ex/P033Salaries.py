@@ -1,0 +1,2 @@
+nodes = int(input())
+graph = []
