@@ -1,3 +1,5 @@
+from collections import deque
+
 rows = int(input())
 cols = int(input())
 
@@ -19,5 +21,23 @@ for row in range(1, rows):
     for col in range(1, cols):
         dp[row][col] = max(dp[row - 1][col],dp[row][col - 1]) + matrix[row][col]
 
-for row in dp:
-    print(row)
+row = rows - 1
+col = cols - 1
+result = deque()
+while row > 0 and col > 0:
+    result.appendleft([row,col])
+    if dp[row][col  - 1] >= dp[row - 1][col]:
+        col -= 1
+    else:
+        row -= 1
+
+while row > 0:
+    result.appendleft([row,col])
+    row -= 1
+
+while col > 0:
+    result.appendleft([row,col])
+    col -= 1
+
+result.appendleft([0,0])
+print(*result, sep = ' ')
