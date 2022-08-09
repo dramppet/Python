@@ -30,3 +30,13 @@ while queue:
             continue
         visited[child] = True
         queue.append(child)
+        parent[child] = node
+
+path = deque()
+node = destination_node
+
+while node is not None:
+    path.appendleft(node)
+    node = parent[node]
+print(f'Shortest path length is: {len(path) - 1}')
+print(*path, sep = ' ')
