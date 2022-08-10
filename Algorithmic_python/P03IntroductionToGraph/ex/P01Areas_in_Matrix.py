@@ -6,12 +6,12 @@ def dfs(parrent, row, col, matrix, visited):
     if matrix[row][col] != parrent:
         return
 
-
     visited[row][col] = True
-    dfs(parrent, row - 1,col,matrix,visited)
-    dfs(parrent, row + 1,col,matrix,visited)
-    dfs(parrent, row,col - 1,matrix,visited)
-    dfs(parrent, row,col + 1,matrix,visited)
+    dfs(parrent, row - 1, col, matrix, visited)
+    dfs(parrent, row + 1, col, matrix, visited)
+    dfs(parrent, row, col - 1, matrix, visited)
+    dfs(parrent, row, col + 1, matrix, visited)
+
 
 rows = int(input())
 cols = int(input())
@@ -41,5 +41,3 @@ for row in range(rows):
 print(f'Areas: {total_areas}')
 for area, size in sorted(areas.items()):
     print(f"Letter '{area}' -> {size}")
-
-    
