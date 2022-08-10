@@ -9,13 +9,12 @@ def bfs(node, graph, visited):
 
     while queue:
         current_node = queue.popleft()
-        print(current_node,end=' ')
+        print(current_node, end = ' ')
 
         for child in graph[current_node]:
             if child not in visited:
                 visited.add(child)
-                queue.append(child)
-
+                bfs(child, graph, visited)
 
 
 graph = {
