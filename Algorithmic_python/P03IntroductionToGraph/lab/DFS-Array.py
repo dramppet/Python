@@ -1,11 +1,13 @@
 def dfs(node, visited, graph):
     if visited[node]:
         return
+
     visited[node] = True
+
     for child in graph[node]:
         dfs(child, visited, graph)
 
-    print(node, end = ' ')
+    print(node, end=' ')
 
 
 graph = [
