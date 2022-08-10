@@ -14,7 +14,7 @@ def bfs(node, graph, visited):
         for child in graph[current_node]:
             if child not in visited:
                 visited.add(child)
-                bfs(child, graph, visited)
+                queue.append(child)
 
 
 graph = {
