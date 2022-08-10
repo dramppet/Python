@@ -12,7 +12,7 @@ def find_depencies(graph):
     return result
 
 
-def fine_node_witfout_dependencies(dependencies_by_node):
+def fine_node_without_dependencies(dependencies_by_node):
     for node, dependencies in dependencies_by_node.items():
         if dependencies == 0:
             return node
@@ -34,7 +34,7 @@ dependencies_by_node = find_depencies(graph)
 has_cycle = False
 sorted_nodes = []
 while dependencies_by_node:
-    node_to_remove = fine_node_witfout_dependencies(dependencies_by_node)
+    node_to_remove = fine_node_without_dependencies(dependencies_by_node)
 
     if node_to_remove is None:
         has_cycle = True
