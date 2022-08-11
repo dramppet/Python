@@ -36,4 +36,4 @@ while row > 0 and col > 0:
 
 
 print(' '.join(result))
-print(dp[rows - 1][cols - 1])
+print(len(result))
