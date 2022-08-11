@@ -1,3 +1,5 @@
+from collections import deque
+
 first = input().split()
 second = input().split()
 
@@ -17,4 +19,21 @@ for row in range(1, rows):
 row = rows - 1
 col = cols - 1
 
+result = deque()
+
+while row > 0 and col > 0:
+    if first[row - 1] == second[col - 1]:
+        result.appendleft(first[row - 1])
+        row -= 1
+        col -= 1
+    elif dp[row - 1][col] > dp [row][col - 1]:
+        row -= 1
+    else:
+        col -= 1
+
+
+
+
+
+print(' '.join(result))
 print(dp[rows - 1][cols - 1])
