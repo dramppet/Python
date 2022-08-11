@@ -1,2 +1,0 @@
-nodes = int(input())
-graph = []
