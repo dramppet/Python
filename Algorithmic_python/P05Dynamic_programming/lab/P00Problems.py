@@ -1,17 +1,11 @@
-def calc_fib(n, memo):
-    if n in memo:
-        return memo[n]
+rows = int(input())
+cols = int(input())
 
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
+dp = []
 
-    result = calc_fib(n - 1, memo) + calc_fib(n - 2, memo)
-    memo[n] = result
+for _ in range(rows):
+    line = [int(x) for x in input().split()]
+    dp.append(line)
 
-    return result
 
-num_fib = int(input())
 
-print(calc_fib(num_fib, {}))
