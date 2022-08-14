@@ -1,12 +1,20 @@
-def dfs(node, graph, visited):
+from collections import deque
+def bfs(node, graph, visited):
     if node in visited:
         return
-
+    queue = deque()
+    queue.append(node)
     visited.add(node)
 
-    for child in graph[node]:
-        dfs(child, graph, visited)
-    print(node, end = ' ')
+    while queue:
+        current_node = queue.popleft()
+        print(current_node, end = ' ')
+
+        for child in graph[node]:
+            if child not in visited:
+                queue.append(child)
+                visited.add(child)
+
 
 graph = {
     1: [19, 21, 14],
