@@ -1,6 +1,7 @@
 from collections import deque
-def dfs(node, graph, visite):
-    result = deque()
+
+
+def dfs(node, graph, visite, com):
     if node in visite:
         return
 
@@ -8,8 +9,7 @@ def dfs(node, graph, visite):
 
     for child in graph[node]:
         dfs(child, graph, visite)
-    result.append(node)
-
+    com.appendleft(node)
 
 
 nodes = int(input())
@@ -25,6 +25,7 @@ for node in range(nodes):
         graph[node] = []
 
 visited = set()
+component = deque()
 
 for node in graph:
-    dfs(node, graph, visited)
+    dfs(node, graph, visited, component)
