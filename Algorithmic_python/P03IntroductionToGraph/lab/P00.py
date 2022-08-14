@@ -23,4 +23,4 @@ graph = {
 visited = set()
 
 for node in graph:
-    dfs(node, graph, visited)
+    bfs(node, graph, visited)
