@@ -1,14 +1,11 @@
-nodes = int(input())
-
-graph = []
-
-for node in range(nodes):
-    line_str = input()
-
-    if len(line_str) > 0:
-        graph.append([int(x) for x in line_str.split()])
-    else:
-        graph.append([])
-
-visited = set()
-
+graph = {
+    1: [19, 21, 14],
+    19: [7, 12, 31, 21],
+    7: [1],
+    12: [],
+    31: [21],
+    21: [14],
+    14: [6, 23],
+    23: [21],
+    6: []
+}
