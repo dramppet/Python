@@ -1,41 +1,37 @@
-def dfs(parent, row, col, matrix, visited):
-    if row < 0 or col < 0 or row >= len(matrix) or col >= len(matrix[0]):
-        return
-    if visited[row][col]:
-        return
-
-    if matrix[row][col] != parent:
+def dfs(node, graph, visited, cycles):
+    if node in cycles:
+        raise Exception
+    if node in visited:
         return
 
+    visited.add(node)
+    cycles.add(node)
 
-    visited[row][col] = True
-    dfs(parent, row - 1, col, matrix, visited)
-    dfs(parent, row + 1, col, matrix, visited)
-    dfs(parent, row, col - 1, matrix, visited)
-    dfs(parent, row, col + 1, matrix, visited)
+    for child in graph[node]:
+        dfs(child, graph, visited, cycles)
+
+    cycles.remove(node)
+
+graph = {}
+while True:
+    line = input()
+
+    if line == 'End':
+        break
+
+    source, destination = input().split('-')
+    if source not in graph:
+        graph[source] = destination
+    if destination not in graph:
+        graph[destination] = []
+    graph[source].append(destination)
+
+visited = set()
+try:
+    for node in graph:
+        dfs(node, graph, visited, set())
+    print('Yes')
+except Exception:
+    print('No')
 
 
-rows = int(input())
-cols = int(input())
-
-matrix = []
-visited = []
-
-for _ in range(rows):
-    matrix.append(list(input()))
-    visited.append([False] * cols)
-areas = {}
-for row in range(rows):
-    for col in range(cols):
-        if visited[row][col]:
-            continue
-        key = matrix[row][col]
-
-        dfs(key, row, col, matrix, visited)
-
-        if key not in areas:
-            areas[key] = 1
-        else:
-            areas[key] += 1
-
-print(areas)
