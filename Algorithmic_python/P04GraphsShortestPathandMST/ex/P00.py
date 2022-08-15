@@ -1,0 +1,24 @@
+class Edges:
+    def __init__(self, source, destination, weight):
+        self.source = source
+        self.destination = destination
+        self.weight = weight
+
+edges = int(input())
+
+graph = {}
+
+for _ in range(edges):
+    source, destination, weight = [int(x) for x in input().split(', ')]
+
+    if source not in graph:
+        graph[source] = []
+    if destination not in graph:
+        graph[destination] = []
+    graph[source].append(Edges(source, destination, weight))
+
+start = int(input())
+target = int(input())
+
+
+
