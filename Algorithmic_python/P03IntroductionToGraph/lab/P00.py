@@ -1,23 +1,34 @@
 from collections import deque
 
-def dfs(node, graph,visited,component):
-    if visited[node]:
+def bfs(node, graph, visited):
+    if node in visited:
         return
-    visited[node] = True
-    for child in graph[node]:
-        dfs(child, graph, visited, component)
-    component.append(node)
-nodes = int(input())
+    queue = deque([node])
+    visited.add(node)
 
-graph = []
+    while queue:
+        current_node = queue.popleft()
+        print(current_node, end = ' ')
 
-for _ in range(nodes):
-    line = input()
-    children = [] if line == ' ' else [int(x) for x in line.split()]
-    graph.append(children)
+        for child in graph[current_node]:
+            if child not in visited:
+                queue.append(child)
+                visited.add(child)
+#1 12 23 6 14 21 31 19 7
 
-visited = [None] * nodes
-component = deque()
-for node in range(len(graph)):
-    dfs(node, graph, visited, component)
-    print(component)
+
+graph = {
+    7: [19, 21, 14],
+    19: [1, 12, 31, 21],
+    1: [7],
+    12: [],
+    31: [21],
+    21: [14],
+    14: [23, 6],
+    6: [],
+    23: [21]
+}
+visited = set()
+
+for node in graph:
+    bfs(node, graph, visited)
