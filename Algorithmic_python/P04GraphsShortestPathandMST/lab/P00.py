@@ -6,17 +6,17 @@ graph = []
 [graph.append([]) for _ in range(nodes + 1)]
 
 for _ in range(edges):
-    source, destinacion = [int(x) for x in input().split()]
-    graph[source].append(destinacion)
+    source, destination = [int(x) for x in input().split()]
+    graph[source].append(destination)
 
-starrt_node = int(input())
+stat_node = int(input())
 destination_node = int(input())
 
 visited = [False] * (nodes + 1)
 parent = [None] * (nodes + 1)
 
-visited[starrt_node] = True
-queue = deque([starrt_node])
+visited[stat_node] = True
+queue = deque([stat_node])
 
 while queue:
     node = queue.popleft()
@@ -37,6 +37,6 @@ node = destination_node
 while node is not None:
     path.appendleft(node)
     node = parent[node]
-print(len(path) - 1)
-print(*path, sep = ' ')
 
+print(len(path))
+print(*path,sep =' ')
