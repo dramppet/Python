@@ -19,24 +19,24 @@ visited[stat_node] = True
 queue = deque([stat_node])
 
 while queue:
-    node_par = queue.popleft()
+    nodess = queue.popleft()
 
-    if node_par == destination_node:
+    if nodess == destination_node:
         break
 
-    for child in graph[node_par]:
+    for child in graph[nodess]:
         if visited[child]:
             continue
         visited[child] = True
         queue.append(child)
-        parent[child] = node_par
+        parent[child] = nodess
 
 path = deque()
-node_par = destination_node
+nodess = destination_node
 
-while node_par is not None:
-    path.appendleft(node_par)
-    node_par = parent[node_par]
+while nodess is not None:
+    path.appendleft(nodess)
+    nodess = parent[nodess]
 
 print(len(path))
 print(*path,sep =' ')
