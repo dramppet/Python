@@ -1,6 +1,7 @@
 def find_root (parent, node):
     while node != parent[node]:
-
+        node = parent[node]
+    return node
 
 class Edge:
     def __init__(self, first, second, weigh):
@@ -20,8 +21,12 @@ for _ in range(edges):
 
 
 parent = [num for num in range(max_node + 1)]
-
+forest = []
 for edge in sorted(graph, key =lambda e : e.weight):
     first_node_root = find_root(parent, edge.first)
     second_node_root = find_root(parent, edge.second)
+
+    if first_node_root != second_node_root:
+        parent[first_node_root] = second_node_root
+        forest.append(edge)
 
