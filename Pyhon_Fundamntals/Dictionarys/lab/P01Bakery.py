@@ -1,5 +1,6 @@
-my_dict  = {'cat' : 'kotka', 'dog': 'kuche'}
+elements = input().split()
+bakery = {}
 
-print(len(my_dict))
-print(my_dict.keys())
-print(my_dict.values())
+for i in range(0, len(elements), 2):
+    bakery[elements[i]] = elements[i + 1]
+
