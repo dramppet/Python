@@ -26,14 +26,10 @@ while row > 0 and col > 0:
         result.appendleft(first[row - 1])
         row -= 1
         col -= 1
-    elif dp[row - 1][col] > dp [row][col - 1]:
+    elif dp[row - 1][col] > dp[row][col - 1]:
         row -= 1
     else:
         col -= 1
-
-
-
-
 
 print(' '.join(result))
 print(len(result))

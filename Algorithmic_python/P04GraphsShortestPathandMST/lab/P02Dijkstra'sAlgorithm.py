@@ -1,5 +1,5 @@
 from queue import PriorityQueue
-
+from collections import deque
 
 class Edge:
     def __init__(self, source, destination, weight):
@@ -44,3 +44,17 @@ while not pq.empty():
         if new_distance < distance[edge.destination]:
             distance[edge.destination] = new_distance
             parent[edge.destination] = node
+            pq.put((new_distance, edge.destination))
+
+if distance[target] == float('inf'):
+    print('There is no such path.')
+else:
+    print(distance[target])
+
+    path = deque()
+    node = target
+
+    while node is not None:
+        path.appendleft(node)
+        node = parent[node]
+    print(*path,sep = ' ')

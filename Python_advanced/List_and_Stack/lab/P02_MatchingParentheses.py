@@ -2,10 +2,9 @@ exp = input()
 
 stack = []
 
-for idx, ch in enumerate(exp):
-    if ch == '(':
+for idx in range(len(exp)):
+    if exp[idx] == '(':
         stack.append(idx)
-    elif ch == ')':
-        clos_idx = idx
-        open_idx = stack.pop()
-        print(exp[open_idx: clos_idx + 1])
+    elif exp[idx] == ')':
+        start_idx = stack.pop()
+        print(exp[start_idx: idx + 1])
