@@ -1,16 +1,15 @@
 budget = float(input())
-count_statist = int(input())
-price_clothing_one_statist = float(input())
+extras = int(input())
+clothing_price = float(input())
 
-price_decor = budget  * 0.1
-price_clothing = count_statist * price_clothing_one_statist
-if count_statist >= 150:
-    price_clothing = price_clothing - (price_clothing * 0.1)
-all_sum = price_decor + price_clothing
+decor = budget * 0.1
+if extras > 150:
+    clothing_price *= 0.9
+total_expenses = decor + extras * clothing_price
 
-if budget > all_sum:
+if total_expenses <= budget:
     print('Action!')
-    print(f'Wingard starts filming with {(budget - all_sum):.2f} leva left.')
+    print(f'Wingard starts filming with {(budget - total_expenses):.2f} leva left.')
 else:
     print('Not enough money!')
-    print(f'Wingard needs {(all_sum - budget):.2f} leva more.')
+    print(f'Wingard needs {(total_expenses - budget):.2f} leva more.')
