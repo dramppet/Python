@@ -1,15 +1,16 @@
-from math import ceil
-name_serial = input()
-time_serial = int(input())
-time_break = int(input())
+import math
+series = input()
+episode_length = int(input())
+break_length = int(input())
 
-time_lunch = time_break * 1 / 8
-time_otdix = time_break * 1/4
-time_out = int(ceil(time_break - time_lunch - time_otdix))
+lunch_time = break_length / 8
+leisure_time = break_length / 4
+time_taken = leisure_time + lunch_time + episode_length
+time_left = break_length - time_taken
 
-if  time_out >= time_serial:
-    print(f'You have enough time to watch {name_serial} '
-          f'and left with {time_out - time_serial} minutes free time."')
+if  time_left >= 0:
+    print(f'You have enough time to watch {series} '
+          f'and left with {math.ceil(time_left)} minutes free time.')
 else:
-    print(f"You don't have enough time to watch {name_serial}, "
-          f"you need {time_serial - time_out} more minutes.")
+    print(f"You don't have enough time to watch {series}, "
+          f"you need {math.ceil(abs(time_left))} more minutes.")
