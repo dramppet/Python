@@ -8,6 +8,8 @@ type_flowers = input()
 count_flowers = int(input())
 budget = int(input())
 
+price = 0
+
 if type_flowers == 'Roses':
     price = count_flowers * ROSES
     if count_flowers > 80:

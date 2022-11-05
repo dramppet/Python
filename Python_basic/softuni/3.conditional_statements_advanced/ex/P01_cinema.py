@@ -12,4 +12,4 @@ elif screening_type == 'Normal':
 elif screening_type == 'Discount':
     income = cinema_capacity * 5.00
 
-print(f'{income:.2f}')
+print(f'{income:.2f} leva.')
