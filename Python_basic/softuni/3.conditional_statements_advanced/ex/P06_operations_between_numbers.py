@@ -2,38 +2,20 @@ num1 = int(input())
 num2 =int(input())
 sign = input()
 
+result = None
+
 
 if sign == '+':
-    operation = num1 + num2
-    if operation % 2 == 0:
-        print(f'{num1} {sign} {num2} = {operation} - even')
-    else:
-        print(f'{num1} {sign} {num2} = {operation} - odd')
+    result = f'{num1} + {num2} = {num1 + num2}' + (' - even' if (num1 + num2) % 2 == 0 else ' - odd')
 elif sign == '-':
-    operation = num1 - num2
-    if operation % 2 == 0:
-        print(f'{num1} {sign} {num2} = {operation} - even')
-    else:
-        print(f'{num1} {sign} {num2} = {operation} - odd')
+    result = f'{num1} - {num2} = {num1 - num2}' + (' - even' if (num1 - num2) % 2 == 0 else ' - odd')
 elif sign == '*':
-    operation = num1 * num2
-    if operation % 2 == 0:
-        print(f'{num1} {sign} {num2} = {operation} - even')
-    else:
-        print(f'{num1} {sign} {num2} = {operation} - odd')
+    result = f'{num1} * {num2} = {num1 * num2}' + (' - even' if (num1 * num2) % 2 == 0 else ' - odd')
+elif num2 == 0:
+    result = f'Cannot divide {num1} by zero'
 elif sign == '/':
-    if num1 == 0:
-        print(f'Cannot divide {num1} by zero')
-    elif num2 == 0:
-        print(f'Cannot divide {num2} by zero')
-    else:
-        operation = num1 / num2
-        print(f'{num1} {sign} {num2} = {operation:.2f}')
+    result = f'{num1} / {num2} = {num1 / num2:.2f}'
 elif sign == '%':
-    if num1 == 0:
-        print(f'Cannot divide {num1} by zero')
-    elif num2 == 0:
-        print(f'Cannot divide {num2} by zero')
-    else:
-        operation = num1 % num2
-        print(f'{num1} {sign} {num2} = {operation}')
+    result = f'{num1} % {num2} = {num1 % num2}'
+
+print(result)

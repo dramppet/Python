@@ -6,10 +6,10 @@ total_price = 0
 
 if season == 'Spring':
     total_price = 3000
-elif season == 'Summer' or season == 'Autumn':
-    total_price = 4200
 elif season == 'Winter':
     total_price = 2600
+else:
+    total_price = 4200
 
 
 if count_fishmen <= 6:
