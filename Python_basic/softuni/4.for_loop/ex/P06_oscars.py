@@ -1,27 +1,20 @@
-name_actor = input()
-point_academia = int(input())
-count_price = int(input())
+MAX_POINTS = 1250.5
 
-length_actor = len(name_actor)
-is_break = False
-point_actor = 0
+actor = input()
+points = float(input())
+judges = int(input())
 
-for _ in range(count_price):
-    name_price = input()
-    point_price = float(input())
-    point = point_academia + ((len(name_price) * point_price) / 2)
-    point_academia = point
 
-    if point > point_actor:
-        point_actor = point
+for _ in range(judges):
+    judge_name = input()
+    judge_points = float(input())
 
-    if point > 1250.5:
-        is_break = True
+    points += len(judge_name) * judge_points / 2
+
+    if points > MAX_POINTS:
+        print(f'Congratulations, {actor} got a nominee for leading role with {points:.1f}!')
         break
-
-if is_break:
-    print(f'Congratulations, {name_actor} got a nominee for leading role with {point_actor}!')
 else:
-    print(f'Sorry, {name_actor} you need {1250.5 - point_actor:.1f} more!')
+    print(f'Sorry, {actor} you need {MAX_POINTS - points:.1f} more!')
 
 
