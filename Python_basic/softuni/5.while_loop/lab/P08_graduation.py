@@ -9,11 +9,12 @@ while True:
     if count > 12 or wrong_grade == 2:
         break
     grade = float(input())
-    sum_grade += grade
 
     if grade < 4.00:
         wrong_grade += 1
+        continue
 
+    sum_grade += grade
 
 if wrong_grade < 2:
     print(f'{name} graduated. Average grade: {sum_grade / 12:.2f}')
