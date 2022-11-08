@@ -1,1 +1,0 @@
-print('Hello, Telerik Academy!')
