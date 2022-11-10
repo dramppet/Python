@@ -1,16 +1,16 @@
-n = float(input())
+num = float(input())
 
-if n == 0:
+if num == 0:
     print("zero")
-elif n >= 0 and n <= 1:
+elif num >= 0 and num <= 1:
     print('small positive')
-elif 0 <= n <= 1000000:
+elif 0 <= num <= 1000000:
     print('positive')
-elif n > 1000000:
+elif num > 1000000:
     print('large positive')
-elif n < 0 and n > -1:
+elif num < 0 and num > -1:
     print('small negative')
-elif n < - 1000000:
+elif num < - 1000000:
     print('large negative')
 else:
     print('negative')
