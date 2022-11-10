@@ -4,8 +4,11 @@ for _ in range(count_strings):
 
     word = input()
 
-    for char in word:
-        if char == ',' or char == '.' or char == '-':
+    for i in range(len(word)):
+        if word[i] == ',' or word[i] == '.' or word[i] == '_':
             print(f'{word} is not pure!')
             break
-    print(f'{word} is pure.')
+    else:
+        print(f'{word} is pure.')
+
+
