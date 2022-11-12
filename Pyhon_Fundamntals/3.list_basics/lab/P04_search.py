@@ -1,17 +1,13 @@
 count = int(input())
 searched_word = input()
-
-words = []
+strings = list()
+fil_strings = list()
 
 for _ in range(count):
-    word = input()
-    words.append(word)
+    current_strings = input()
+    strings.append(current_strings)
+    if searched_word in current_strings:
+        fil_strings.append(current_strings)
 
-print(words)
-
-for w in range(len(words)):
-    current_word = words[w]
-
-    if searched_word not in current_word:
-        words.remove(current_word)
-print(current_word)
+print(strings)
+print(fil_strings)

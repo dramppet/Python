@@ -1,9 +1,8 @@
 n = int(input())
 
-course = []
+course = list()
 
 for _ in range(n):
-    word = input()
-    course.append(word)
+    course.append(input())
 
 print(course)
