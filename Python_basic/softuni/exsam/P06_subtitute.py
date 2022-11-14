@@ -6,23 +6,6 @@ N = int(input())
 smeni = 0
 is_break = False
 
-# if K > 8:
-#     K = 8
-# if K < 0:
-#     K = 0
-# if L > 9:
-#     L = 9
-# if L < 0:
-#     L = 0
-# if M > 8:
-#     M = 8
-# if M < 0:
-#     M = 0
-# if N > 9:
-#     N = 9
-# if N < 0:
-#     N = 0
-
 for k in range(K, 9):
     if is_break:
         break
