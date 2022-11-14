@@ -1,2 +1,4 @@
-for i in range(9,5,-1):
-    print(i)
+x = 10
+y = "20"
+print(x + y)
+
