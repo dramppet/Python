@@ -1,13 +1,6 @@
-word = input()
 
 vowels = ['a', 'o', 'u', 'e', 'i']
 
-words = list()
+word2 = [char for char in input() if char not in vowels]
 
-for char in  word:
-    if char in vowels:
-        continue
-    else:
-        words.append(char)
-
-print(''.join(words))
+print(''.join(word2))
