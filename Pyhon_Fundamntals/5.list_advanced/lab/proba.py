@@ -1,4 +1,4 @@
-nums = [el for el in range(1,11) if el % 2 == 0]
+def sum_num(a, b):
+    return a + b
 
-print(nums)
-
+lambda a,b : a + b
