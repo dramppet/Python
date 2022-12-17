@@ -1,10 +1,6 @@
-tail = input()
-body = input()
-head = input()
-
 zoo = []
-zoo.append(head)
-zoo.append(body)
-zoo.append(tail)
+for _ in range(3):
+    data = input()
+    zoo.append(data)
 
 print(zoo)
