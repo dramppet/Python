@@ -1,10 +1,9 @@
-line = input().split(' ')
-numbers_list = list()
+list_of_numbers = input().split()
 
-for num in line:
-    if int(num) > 0:
-        numbers_list.append(-int(num))
-    else:
-        numbers_list.append(abs(int(num)))
+opposite_numbers = []
 
-print(numbers_list)
+for element in list_of_numbers:
+    current_number = int(element)
+    opposite_numbers.append(current_number)
+
+print(opposite_numbers)
