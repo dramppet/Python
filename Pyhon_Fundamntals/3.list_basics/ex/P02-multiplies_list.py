@@ -1,9 +1,8 @@
 factor = int(input())
 count = int(input())
 
-numbers = list()
+list_of_numbers = []
+for multiplier in range(1, count + 1):
+    list_of_numbers.append(multiplier * factor)
 
-for i in range(1, count + 1):
-    numbers.append(factor * i)
-
-print(numbers)
+print(list_of_numbers)
