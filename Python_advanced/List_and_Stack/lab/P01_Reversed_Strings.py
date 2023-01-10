@@ -1,9 +1,9 @@
-word = input()
+words = input()
 
 stack = []
 
-for w in word:
-    stack.append(w)
+for ch in words:
+    stack.append(ch)
 
 while stack:
     print(stack.pop(),end='')
