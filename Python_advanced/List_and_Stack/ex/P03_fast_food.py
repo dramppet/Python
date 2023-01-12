@@ -1,7 +1,7 @@
 from collections import deque
 
 food = int(input())
-queue = deque(list([int(x) for x in input().split()]))
+queue = deque([int(x) for x in input().split()])
 print(max(queue))
 
 while queue:
