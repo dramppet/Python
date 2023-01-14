@@ -1,15 +1,16 @@
-count_parking = int(input())
-parking_lot = {input() for _ in range(count_parking)}
-
-COMMAND_IN = 'IN'
-COMMAND_OUT = 'OUT'
+n = int(input())
 
 parking = set()
 
-for name in parking_lot:
-    command, numbers = name.split(', ')
+for _ in range(n):
+    direction, car_number = input().split(', ')
 
-    if command == 'IN':
-        parking.add(numbers)
-    elif command == 'OUT':
-        parking.pop(numbers)
+    if direction == 'IN':
+        parking.add(car_number)
+    else:
+        parking.remove(car_number)
+
+if parking:
+    [print(car) for car in parking]
+else:
+    print('Parking Lot is Empty')
