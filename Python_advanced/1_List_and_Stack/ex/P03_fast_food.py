@@ -13,7 +13,7 @@ while queue:
         break
 
 if queue:
-    print("Orders left: ", emd=' ')
+    print("Orders left:", end=' ')
     while queue:
         print(queue.popleft(),end = ' ')
 
