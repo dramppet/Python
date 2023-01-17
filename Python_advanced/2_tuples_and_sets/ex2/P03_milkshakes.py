@@ -7,24 +7,24 @@ milkshakes = 0
 
 while milkshakes != 5 and chocolates and cups_of_milk:
 
-    choco = chocolates.pop()
+    chocolate = chocolates.pop()
     cup_of_milk = cups_of_milk.popleft()
 
-    if choco <= 0 and cup_of_milk <= 0:
+    if chocolate <= 0 and cup_of_milk <= 0:
         continue
-    if choco <= 0:
+    if chocolate <= 0:
         cups_of_milk.appendleft(cup_of_milk)
         continue
     if cup_of_milk <= 0:
-        chocolates.append(choco)
+        chocolates.append(chocolate)
         continue
 
-    if choco == cup_of_milk:
+    if chocolate == cup_of_milk:
         milkshakes += 1
         continue
     else:
         cups_of_milk.append(cup_of_milk)
-        chocolates.append(choco - 5)
+        chocolates.append(chocolate - 5)
 
 
 print("Great! You made all the chocolate milkshakes needed!" if milkshakes >= 5 else f"Not enough milkshakes.")
