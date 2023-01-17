@@ -5,31 +5,25 @@ cups_of_milk = deque(int(x) for x in input().split(', '))
 
 milkshakes = 0
 
-while True:
-
-    if len(chocolates)  == 0:
-        break
-    if len(cups_of_milk) == 0:
-        break
-
-    if milkshakes == 5:
-        break
+while milkshakes != 5 and chocolates and cups_of_milk:
 
     choco = chocolates.pop()
-    milk = cups_of_milk.popleft()
+    cup_of_milk = cups_of_milk.popleft()
 
-    if choco <= 0:
-        cups_of_milk.appendleft(milk)
+    if choco <= 0 and cup_of_milk <= 0:
         continue
-    if milk <= 0:
+    if choco <= 0:
+        cups_of_milk.appendleft(cup_of_milk)
+        continue
+    if cup_of_milk <= 0:
         chocolates.append(choco)
         continue
 
-    if choco == milk:
+    if choco == cup_of_milk:
         milkshakes += 1
         continue
     else:
-        cups_of_milk.append(milk)
+        cups_of_milk.append(cup_of_milk)
         chocolates.append(choco - 5)
 
 
