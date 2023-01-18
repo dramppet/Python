@@ -20,7 +20,7 @@ while words:
             result.append(color)
             break
     else:
-        for el in (first_word[::-1], second_word[::-1]):
+        for el in (first_word[:-1], second_word[:-1]):
             if el:
                 words.insert(len(words) // 2 ,el)
 
