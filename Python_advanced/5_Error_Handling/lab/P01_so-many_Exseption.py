@@ -1,4 +1,4 @@
-numbers_list = [int(el) for el in input().split(", ")]
+numbers_list = list(map(int, input().split(", ")))
 result = 1
 
 for i in range(len(numbers_list)):
