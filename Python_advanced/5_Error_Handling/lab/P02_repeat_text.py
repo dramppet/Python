@@ -1,5 +1,3 @@
-
-
 try:
     text = input()
     num = int(input())
