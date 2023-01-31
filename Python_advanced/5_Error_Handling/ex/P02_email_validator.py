@@ -1,3 +1,6 @@
+from re import findall
+
+
 class NameTooShortError(Exception):
     pass
 
@@ -19,12 +22,21 @@ email = input()
 
 while email != "End":
 
-    if len(email.split("@")[0]) <= MIN_LENGTH:
-        raise NameTooShortError(f"Name must be more than {MIN_LENGTH} characters")
+    try:
+        if len(email.split("@")[0]) <= MIN_LENGTH:
+            raise NameTooShortError(f"Name must be more than {MIN_LENGTH} characters")
 
-    if "@" not in email:
-        raise MustContainAtSymbolError("Email must contain @")
+        if "@" not in email:
+            raise MustContainAtSymbolError("Email must contain @")
 
-    if findall(pattern_domain, valid_domains)[-1]:
-        raise InvalidDomainError (f"Domain must be one of the following: {', '.join(valid_domains)}")
+        if findall(pattern_domain, email)[-1] not in valid_domains:
+            raise InvalidDomainError (f"Domain must be one of the following: {', '.join(valid_domains)}")
+
+    except IndexError:
+        print("Invalid email")
+
+    else:
+        print("Email is valid")
+
+    email = input()
 
