@@ -16,6 +16,6 @@ for line in range(len(text_file)):
             letters +=1
         elif symbols in punctuation:
             marks += 1
-    output_file.write(f"Line {line+ 1}: {line_text} ({letters})({marks})\n")
+    output_file.write(f"Line {line+ 1}: {''.join(line_text[:-1])} ({letters})({marks})\n")
 
 output_file.close()
