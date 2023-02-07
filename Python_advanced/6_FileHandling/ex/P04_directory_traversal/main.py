@@ -14,5 +14,16 @@ def save_extensions(dir_name,first_level=False):
 
 directory = input()
 extensions = {}
-save_extensions(directory)
+result = []
 
+extensions = sorted(extensions.items(), key=lambda kvp: kvp[0])
+print(extensions)
+
+for key, value in extensions:
+    result.append(f".{key}")
+
+    for file in sorted(value):
+        result.append(f"- - - {file}")
+
+with open("report.txt", "w") as file:
+    file.write('\n'.join(result))
