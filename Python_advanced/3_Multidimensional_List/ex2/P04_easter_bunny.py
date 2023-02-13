@@ -19,3 +19,16 @@ for row in range(size):
 
     if "B" in matrix[row]:
         pos_bunny = [row, matrix[row].index("B")]
+
+
+for direct,pos in directions.items():
+    row, col = [
+        pos_bunny[0] + pos[0],
+        pos_bunny[1] + pos[1]
+    ]
+
+    path = []
+    collected_eggs = 0
+
+
+
