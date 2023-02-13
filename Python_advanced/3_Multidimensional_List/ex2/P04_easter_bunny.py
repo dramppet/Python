@@ -30,5 +30,26 @@ for direct,pos in directions.items():
     path = []
     collected_eggs = 0
 
+    while 0 <= row < size and 0 <= col < size:
+        if matrix[row][col] == "X":
+            break
+
+        collected_eggs += int(matrix[row][col])
+        path.append([row,col])
+
+        row += pos[0]
+        col += pos[1]
+
+    if collected_eggs >= max_collected_eggs:
+        max_collected_eggs = collected_eggs
+        best_path = path
+        best_direction = direct
+
+
+print(best_direction)
+print(*best_path,sep="\n")
+print(max_collected_eggs)
+
+
 
 
