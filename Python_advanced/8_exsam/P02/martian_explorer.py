@@ -22,9 +22,5 @@ for row in range(SIZE):
 
 directions = input().split(", ")
 
-
-
-
-
 for direction in directions:
     rover_row, rover_col = move_rover(direction, rover_row, rover_col)
