@@ -8,6 +8,9 @@ def move_rover(direction, row, col):
     if direction =="down":
         return row + 1,col
 
+def out_side(rover_row, rover_col, SIZE):
+        pass
+
 SIZE = 6
 
 rover_row, rover_col = 0, 0
@@ -22,5 +25,8 @@ for row in range(SIZE):
 
 directions = input().split(", ")
 
+
 for direction in directions:
     rover_row, rover_col = move_rover(direction, rover_row, rover_col)
+
+    if out_side(rover_row, rover_col, SIZE):
