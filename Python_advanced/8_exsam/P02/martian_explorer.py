@@ -1,11 +1,11 @@
 def move_rover(direction, row, col):
     if direction == "left":
         return row, col - 1
-    elif direction == "right":
+    if direction == "right":
         return row,col + 1
-    elif direction == "up":
+    if direction == "up":
         return row - 1,col
-    elif direction =="down":
+    if direction =="down":
         return row + 1,col
 
 SIZE = 6
