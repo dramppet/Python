@@ -13,6 +13,17 @@ def out_side(row, col, SIZE):
     return row < 0 or col < 0 or row >= SIZE or col >= SIZE
 
 
+def reposition_rover(row, col, SIZE):
+    if row < 0:
+        return SIZE - 1, col
+    if row >= SIZE:
+        return 0, col
+    if col < 0:
+        return row, SIZE - 1
+    if col >= SIZE:
+        return row, 0
+
+
 SIZE = 6
 
 rover_row, rover_col = 0, 0
@@ -31,4 +42,4 @@ for direction in directions:
     rover_row, rover_col = move_rover(direction, rover_row, rover_col)
 
     if out_side(rover_row, rover_col, SIZE):
-        rover_row, rover_col = reposition_rover(rover_row, rover_col,SIZE)
+        rover_row, rover_col = reposition_rover(rover_row, rover_col, SIZE)
