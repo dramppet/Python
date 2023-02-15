@@ -31,3 +31,4 @@ for direction in directions:
     rover_row, rover_col = move_rover(direction, rover_row, rover_col)
 
     if out_side(rover_row, rover_col, SIZE):
+        rover_row, rover_col = reposition_rover(rover_row, rover_col,SIZE)
