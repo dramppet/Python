@@ -13,7 +13,7 @@ def add_songs(*tuples):
         output.append("- " + s_title)
         output.extend(s_lyrics)
 
-    return
+    return "\n".join(output)
 
 
 
