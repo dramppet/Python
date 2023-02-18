@@ -9,7 +9,7 @@ healing_item = {
     100: "MedKit",
 }
 
-elements = {}
+aptecka = {}
 
 while medicaments:
 
@@ -23,15 +23,15 @@ while medicaments:
 
     if product in healing_item:
         item = healing_item[product]
-        if item not in elements:
-            elements[item]  = 1
+        if item not in aptecka:
+            aptecka[item]  = 1
         else:
-            elements[item] += 1
+            aptecka[item] += 1
     elif product > 100:
-        if 'MedKit' not in elements:
-            elements['MedKit'] = 1
+        if 'MedKit' not in aptecka:
+            aptecka['MedKit'] = 1
         else:
-            elements['MedKit'] += 1
+            aptecka['MedKit'] += 1
         if len(medicaments) > 0:
             medicaments[-1] = medicaments[-1] + (product - 100)
     else:
@@ -44,9 +44,9 @@ elif  len(medicaments) == 0:
 elif len(textiles) == 0:
     print('Textiles are empty.')
 
-if elements:
+if aptecka:
 
-    sorted_d = sorted(elements.items(),key = lambda x: (-x[1],x[0]))
+    sorted_d = sorted(aptecka.items(), key = lambda x: (-x[1], x[0]))
 
     for el, it in sorted_d:
         print(f"{el} - {it}")
