@@ -44,12 +44,10 @@ elif  len(medicaments) == 0:
 elif len(textiles) == 0:
     print('Textiles are empty.')
 
-if aptecka:
+sorted_d = sorted(aptecka.items(), key = lambda x: (-x[1], x[0]))
 
-    sorted_d = sorted(aptecka.items(), key = lambda x: (-x[1], x[0]))
-
-    for el, it in sorted_d:
-        print(f"{el} - {it}")
+for el, it in sorted_d:
+    print(f"{el} - {it}")
 
 if len(medicaments) > 0:
     med = reversed(medicaments)
