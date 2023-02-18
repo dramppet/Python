@@ -44,7 +44,7 @@ elif  len(medicaments) == 0:
 elif len(textiles) == 0:
     print('Textiles are empty.')
 
-sorted_d = sorted(aptecka.items(), key = lambda kvp: (-kvp[1], kvp[0]))
+sorted_d = sorted(aptecka.items(),key = lambda kvp: (-kvp[1], kvp[0]))
 
 for el, it in sorted_d:
     print(f"{el} - {it}")
