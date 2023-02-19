@@ -27,7 +27,7 @@ while boxes and elf_energies:
         toys_count += 2
         total_energy_spent += 2 * box
         elf_energies.append(elf_energy - (2 * box) + 1)
-    elif box <= elf_energy:
+    elif box <= elf_energy and toys_count % 3 > 0:
         toys_count += 1
         total_energy_spent += 1 * box
         elf_energies.append(elf_energy - box + 1 )
