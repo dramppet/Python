@@ -4,10 +4,10 @@ def shop_from_grocery_list(a,product_list,*args):
     by_product = []
     all_p = product_list
 
-    is_by = False
+    product_by = False
 
     for product_name, price in args:
-        if is_by:
+        if product_by:
             break
         for _ in product_list:
             if product_name in by_product:
@@ -17,7 +17,7 @@ def shop_from_grocery_list(a,product_list,*args):
                 by_product.append(product_name)
                 break
             if budget < price:
-                is_by = True
+                product_by = True
                 break
 
     for a in by_product:
