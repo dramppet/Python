@@ -9,29 +9,35 @@ for row in range(SIZE):
 
 coordinates = input()
 
-coordinate = [int(coordinates[1:2]), int(coordinates[4:5])]
+row  =int(coordinates[1])
+col = int(coordinates[4])
 
-directions = {
-    "up": (-1, 0),
-    "down": (1, 0),
-    "left": (0, -1),
-    "right": (0, 1),
-}
 
 while True:
     command = input().split(", ")
-    row = coordinate[0]
-    col = coordinate[1]
 
     if command[0] == "Stop":
         break
 
-    if command[0] == "Create":
-        pass
+    if command[1] == "up":
+        row -= 1
+    elif command[1] == "down":
+        row +=1
+    elif command[1] == "left":
+        col -= 1
+    elif command[1] == "right":
+        col += 1
 
+    if command[0] == "Create":
+        if matrix[row][col] == ".":
+            matrix[row][col] = command[2]
     elif command[0] == "Update":
-        pass
+        if matrix[row][col] != ".":
+            matrix[row][col] = command[2]
     elif command[0] == "Delete":
-        pass
+        if matrix[row][col] != ".":
+            matrix[row][col] = "."
     elif command[0] == "Read":
-        pass
+        if matrix[row][col] != ".":
+            print(matrix[row][col])
+[(print(*el))for el in matrix]
