@@ -1,5 +1,5 @@
-def shop_from_grocery_list(a,product_list,*args):
-    budget = int(a)
+def shop_from_grocery_list(budget_input,product_list,*args):
+    budget = int(budget_input)
 
     by_product = []
     all_p = product_list
