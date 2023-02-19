@@ -1,8 +1,8 @@
 def shop_from_grocery_list(budget_input,product_list,*args):
     budget = int(budget_input)
 
-    by_product = []
-    all_p = product_list
+    by_product = set()
+    all_p = set(product_list)
 
     product_by = False
 
@@ -10,24 +10,18 @@ def shop_from_grocery_list(budget_input,product_list,*args):
         if product_by:
             break
         for _ in product_list:
-            if product_name in by_product:
-                continue
             if product_name in product_list and budget - price > 0:
                 budget = budget - price
-                by_product.append(product_name)
+                by_product.add(product_name)
                 break
             if budget < price:
                 product_by = True
                 break
 
-    for a in by_product:
-        for b in all_p:
-            if a == b:
-                all_p.remove(a)
-                break
+    not_by_product = by_product.difference(all_p)
 
     if len(all_p) > 0:
-        return f"You did not buy all the products. Missing products: {', '.join(all_p)}."
+        return f"You did not buy all the products. Missing products: {not_by_product}."
     else:
         return f"Shopping is successful. Remaining budget: {budget:.2f}."
 #
@@ -41,13 +35,13 @@ def shop_from_grocery_list(budget_input,product_list,*args):
 # #     ("tomato", 20.45),
 # # ))
 #
-# # print(shop_from_grocery_list(
-# #     100,
-# #     ["tomato", "cola", "chips", "meat"],
-# #     ("cola", 5.8),
-# #     ("tomato", 10.0),
-# #     ("meat", 22),
-# # ))
+print(shop_from_grocery_list(
+    100,
+    ["tomato", "cola", "chips", "meat"],
+    ("cola", 5.8),
+    ("tomato", 10.0),
+    ("meat", 22),
+))
 #
 # print(shop_from_grocery_list(
 #     100,
