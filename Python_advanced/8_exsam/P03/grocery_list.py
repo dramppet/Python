@@ -15,11 +15,9 @@ def shop_from_grocery_list(budget_input,product_list,*args):
                 by_product.add(product_name)
                 break
 
-
     not_by_product = all_p.difference(by_product)
 
-
-    if len(all_p) > 0:
+    if len(not_by_product) > 0:
         return f"You did not buy all the products. Missing products: {', '.join(not_by_product)}."
     else:
         return f"Shopping is successful. Remaining budget: {budget:.2f}."
