@@ -1,5 +1,5 @@
 def check_valid_indexes(indexes):
-    if set(indexes[:2]).issubset(valid_rows) and set(indexes[2:]).issubset(valid_cols):
+    if {indexes[0], indexes[2]}.issubset(valid_rows) and {indexes[1], indexes[3]}.issubset(valid_cols):
         return True
     return False
 
