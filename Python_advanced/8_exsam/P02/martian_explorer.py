@@ -38,8 +38,32 @@ for row in range(SIZE):
 
 directions = input().split(", ")
 
+water_found = False
+metal_found = False
+concrete_found = False
+
 for direction in directions:
     rover_row, rover_col = move_rover(direction, rover_row, rover_col)
 
     if out_side(rover_row, rover_col, SIZE):
         rover_row, rover_col = reposition_rover(rover_row, rover_col, SIZE)
+
+    cell_value = area[rover_row][rover_col]
+
+    if cell_value == "W":
+        water_found = True
+        print(f"Water deposit found at ({rover_row}, {rover_col})")
+    elif cell_value == "C":
+        concrete_found = True
+        print(f"Concrete deposit found at ({rover_row}, {rover_col})")
+    elif cell_value == "M":
+        metal_found = True
+        print(f"Metal deposit found at ({rover_row}, {rover_col})")
+    elif cell_value == "R":
+        print(f"Rover got broken at ({rover_row}, {rover_col})")
+
+if water_found and metal_found and concrete_found:
+    print('Area suitable to start the colony.')
+else:
+    print('Area not suitable to start the colony.')
+
