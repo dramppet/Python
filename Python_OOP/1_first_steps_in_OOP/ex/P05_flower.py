@@ -4,6 +4,12 @@ class Flower:
         self.water_requirements = water_requirements
         self.is_happy = False
 
+    def water(self, quantity):
+        if quantity >= self.water_requirements:
+            self.is_happy = True
+    def status(self):
+
+
 
 
 
