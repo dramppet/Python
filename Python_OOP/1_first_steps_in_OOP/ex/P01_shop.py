@@ -7,6 +7,7 @@ class Shop:
         return len(self.items)
 
 shop = Shop("My Shop", ["Apples", "Bananas", "Cucumbers"])
+shop = Shop("My Shopings", ["Apples", "Bananas", "Cucumbers"])
 print(shop.get_items_count())
 
 
