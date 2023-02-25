@@ -9,7 +9,7 @@ class Point:
     def set_y(self, new_y):
         self.y = new_y
 
-    def __str__(self):
+    def __repr__(self):
         return f"The point has coordinates ({self.x},{self.y})"
 
 
