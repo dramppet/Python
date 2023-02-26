@@ -1,3 +1,8 @@
+class Vet:
+    pass
+
+
+
 peter = Vet("Peter")
 george = Vet("George")
 print(peter.register_animal("Tom"))
