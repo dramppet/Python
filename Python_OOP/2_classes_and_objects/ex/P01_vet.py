@@ -1,5 +1,9 @@
 class Vet:
-    pass
+    ANIMALS = []
+    SPACE = 5
+    def __init__(self, name):
+        self.name = name
+        self.animals = []
 
 
 
