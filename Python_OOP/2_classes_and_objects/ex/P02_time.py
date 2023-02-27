@@ -25,9 +25,10 @@ class Time:
                 self.hours += 1
                 if self.hours >= Time.max_hours:
                     self.hours = 0
-        Time.get_time(self)
+        return Time.get_time(self)
 
 
 
-time = Time(9, 30, 59)
+time = Time(10, 59, 59)
 print(time.next_second())
+
