@@ -1,18 +1,18 @@
 class Vet:
     animals = []
     space = 5
+
     def __init__(self, name: str):
         self.name = name
         self.animals = []
 
     def register_animal(self, animal_name):
-        if 0 < Vet.space < 6:
-            self.animals.append(animal_name)
-            Vet.animals.append(animal_name)
-            Vet.space -= 1
-            return f"{animal_name} registered in the clinic"
-        else:
-            return f"{animal_name} unregistered successfully"
+        if len(self.animals) >= Vet.space:
+            return 'Not enough space'
+
+        self.animals.append(animal_name)
+        Vet.animals.append(animal_name)
+        return f"{animal_name} registered in the clinic"
 
     def unregister_animal(self, animal_name):
         if animal_name in self.animals:
