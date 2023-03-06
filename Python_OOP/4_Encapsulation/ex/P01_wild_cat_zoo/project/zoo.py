@@ -46,3 +46,17 @@ class Zoo:
 
         self.__budget -= salaries
         return f"You payed your workers. They are happy. Budget left: {self.__budget}"
+
+    def tend_animals(self):
+        animas_cost = sum(a.money_for_care for a in self.animals)
+
+        if self.__budget < animas_cost:
+            return "You have no budget to tend the animals. They are unhappy."
+
+        self.__budget -= animas_cost
+        return f"You tended all the animals. They are happy. Budget left: {self.__budget}"
+
+    def profit(self, amount):
+        self.__budget += amount
+
+    def animals_status(self):
