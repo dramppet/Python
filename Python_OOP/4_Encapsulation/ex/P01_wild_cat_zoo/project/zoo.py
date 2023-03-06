@@ -29,11 +29,20 @@ class Zoo:
         self.workers.append(worker)
         return f"{worker.name} the {worker.__class__.__name__} hired successfully"
 
-    def fire_worker(self, worker_name):
-        if worker_name in self.workers:
-            return f"{worker_name} fired successfully"
-        return f"There is no {worker_name} in the zoo"
+    def fire_worker(self, worker_name:str):
+        try:
+            worker = next(filter(lambda w: w.name == worker_name ,self.workers))
+        except StopIteration:
+            return f"There is no {worker_name} in the zoo"
+
+        self.workers.remove(worker)
+        return f"{worker_name} fired successfully"
 
     def pay_workers(self):
-        if self.__budget > 0:
-            pass
+        salaries = sum( w.salary for w in self.workers)
+
+        if self.__budget < salaries:
+            return f"You have no budget to pay your workers. They are unhappy"
+
+        self.__budget -= salaries
+        return f"You payed your workers. They are happy. Budget left: {self.__budget}"
