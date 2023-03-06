@@ -1,12 +1,36 @@
 class PizzaDelivery:
-    def __init__(self, name: str, price: float, ingredients):
+
+    def __init__(self, name, price, ingredients):
         self.name = name
         self.price = price
-        self.ingredients = {}
-        self.order = False
+        self.ingredients = ingredients
+        self.ordered = False
 
-    def add_extra(self, ingredient:str, quantity:int, price_per_quantity:float):
-        if ingredient in self.ingredients[ingredient]:
+    def add_extra(self, ingredient, quantity, price_per_ingredient):
+        if self.ordered:
+            return f"Pizza {self.name} already prepared, and we can't make any changes!"
+        if ingredient in self.ingredients:
+            self.ingredients[ingredient] += quantity
+        else:
+            self.ingredients[ingredient] = quantity
+        self.price += price_per_ingredient * quantity
+
+    def remove_ingredient(self, ingredient, quantity, price_per_ingredient):
+        if self.ordered:
+            return f"Pizza {self.name} already prepared, and we can't make any changes!"
+        if ingredient not in self.ingredients:
+            return f"Wrong ingredient selected! We do not use {ingredient} in {self.name}!"
+        if self.ingredients[ingredient] < quantity:
+            return f"Please check again the desired quantity of {ingredient}!"
+        self.ingredients[ingredient] -= quantity
+        self.price -= quantity * price_per_ingredient
+
+    def make_order(self):
+        if not self.ordered:
+            self.ordered = True
+            ingredients = ', '.join([f'{key}: {value}' for key, value in self.ingredients.items()])
+            return f"You've ordered pizza {self.name} prepared with {ingredients} and the price will be {self.price}lv."
+        return f"Pizza {self.name} already prepared, and we can't make any changes!"
 
 
 
