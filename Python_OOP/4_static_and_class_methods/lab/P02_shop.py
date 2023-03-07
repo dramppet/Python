@@ -24,3 +24,12 @@ class Shop:
 
         if self.items[item_name] < amount:
             return f"Cannot remove {amount} {item_name}"
+
+        self.items[item_name] -= amount
+
+        if self.items[item_name] == 0:
+            del self.items[item_name]
+        return f"{amount} {item_name} removed from the shop"
+
+    def __repr__(self):
+        return f"{self.name} of type {self.type} with capacity {self.capacity}"
