@@ -22,3 +22,5 @@ class Shop:
         if item_name not in self.items:
             return f"Cannot remove {amount} {item_name}"
 
+        if self.items[item_name] < amount:
+            return f"Cannot remove {amount} {item_name}"
