@@ -19,6 +19,6 @@ class Shop:
         return f"{item_name} added to the shop"
 
     def remove_item(self, item_name, amount):
-        if item_name in self.items:
-            pass
+        if item_name not in self.items:
+            return f"Cannot remove {amount} {item_name}"
 
