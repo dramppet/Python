@@ -4,6 +4,9 @@ class Integer:
 
     @classmethod
     def from_float(cls, float_value):
+        if not isinstance(float_value, float):
+            return "value is not a float"
+
         return cls(int(float_value))
 
     @classmethod
@@ -12,7 +15,7 @@ class Integer:
         int_value = 0
 
         for i in range(len(value)):
-            if rom_val[value[i]] > rom_val[value[i - 1]]:
+            if i != 0 and rom_val[value[i]] > rom_val[value[i - 1]]:
                 int_value += rom_val[value[i]] - 2*rom_val[value[ i - 1]]
             else:
                 int_value += rom_val[value[i]]
@@ -21,4 +24,7 @@ class Integer:
 
     @classmethod
     def from_string(cls, value):
-        pass
+        if not isinstance(value,str):
+            return "wrong type"
+
+        return cls(int(value))
