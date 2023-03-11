@@ -23,14 +23,14 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     def __init__(self, length, width):
-        self.__length = length
-        self.__width = width
+        self.__ength = length
+        self._width = width
 
     def calculate_area(self):
-        return self.__length * self.__width
+        return self.__ength * self._width
 
     def calculate_perimeter(self):
-        return  2 * (self.__length + self.__width)
+        return  2 * (self.__ength + self._width)
 
 circle = Circle(5)
 print(circle.calculate_area())
