@@ -18,9 +18,6 @@ class Vehicle(ABC):
 class Car(Vehicle):
     CONDITIONER_ON = 0.9
 
-    def __init__(self, fuel_quantity, fuel_consumption):
-        super().__init__(fuel_quantity, fuel_consumption)
-
     def drive(self, distance):
         consumption = (self.fuel_consumption + Car.CONDITIONER_ON) * distance
 
@@ -33,9 +30,6 @@ class Car(Vehicle):
 
 class Truck(Vehicle):
     CONDITIONER_ON = 1.6
-
-    def __init__(self, fuel_quantity, fuel_consumption):
-        super().__init__(fuel_quantity, fuel_consumption)
 
     def drive(self, distance):
         consumption = (self.fuel_consumption + Truck.CONDITIONER_ON) * distance
