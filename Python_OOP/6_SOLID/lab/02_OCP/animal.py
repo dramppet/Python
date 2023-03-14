@@ -28,7 +28,7 @@ def animal_sound(animals: list):
         print(animal.make_sound())
 
 
-animals = [Cat('cat'), Dog('dog')]
+animals = [Cat('cat'), Dog('dog'), Chicken('chicken')]
 animal_sound(animals)
 
 ## добавете ново животно и рефакторирайте кода да работи без да се налага да се правят промени по него
