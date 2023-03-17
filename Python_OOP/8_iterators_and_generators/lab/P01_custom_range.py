@@ -11,8 +11,9 @@ class custom_range:
         if self.start > self.end:
             raise StopIteration
         else:
+            result = self.start
             self.start += 1
-            return self.start - 1
+            return result
 
 one_to_ten = custom_range(1, 10)
 for num in one_to_ten:
