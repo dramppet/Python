@@ -2,19 +2,17 @@ class take_skip:
     def __init__(self, step, count):
         self.step = step
         self.count = count
-        self.disc = 0
+        self.iterations = -1
 
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.count <= 0:
+        if self.iterations == self.count - 1:
             raise StopIteration
-        result = self.disc
-        self.disc += self.step
-        self.count -= 1
-        return result
+        self.iterations += 1
+        return self.iterations * self.step
 
 
 
