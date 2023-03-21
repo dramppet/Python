@@ -1,0 +1,17 @@
+def vowel_filter(function):
+
+    def wrapper():
+
+        letter = function()
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        filtered_letters = [l for l in letter if l in vowels]
+        return filtered_letters
+    return wrapper
+
+    return wrapper
+
+@vowel_filter
+def get_letters():
+    return ["a", "b", "c", "d", "e"]
+
+print(get_letters())
