@@ -51,6 +51,7 @@ class Manager(ABC):
 
         self.worker = worker
 
+
 class WorkManager(Manager):
 
     def set_worker(self, worker):
@@ -60,6 +61,8 @@ class WorkManager(Manager):
 
     def manage(self):
         self.worker.work()
+
+
 class BreakManager(Manager):
 
     def set_worker(self, worker):
@@ -89,4 +92,3 @@ try:
     break_manager.lunch_break()
 except:
     pass
-
