@@ -5,6 +5,8 @@ class Person:
     def __init__(self, position):
         self.position = position
 
+class FreePerson(Person):
+
     def walk_north(self, dist):
         self.position[1] += dist
 
