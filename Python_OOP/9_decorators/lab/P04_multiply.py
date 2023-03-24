@@ -1,8 +1,15 @@
-def number_increment(numbers):
-    def increase():
+def multiply(times):
 
-        return [ n + 1 for n in numbers]
+    def decorator(function):
+        def wrapper(*args, **kwargs):
+            result = function(*args, **kwargs)
+            return times * result
+        return wrapper
 
-    return increase()
+    return decorator
 
-print(number_increment([1, 2, 3]))
+@multiply(3)
+def add_ten(number):
+    return number + 10
+
+print(add_ten(3))
