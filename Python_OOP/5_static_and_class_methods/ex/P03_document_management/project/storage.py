@@ -42,9 +42,11 @@ class Storage:
         self.topics.remove(topic)
 
     def delete_document(self, document_id):
-        document = [d for d in self.documents if d.id == document_id][0]
-        self.documents.remove(document)
+        self.documents.remove(self.get_document(document_id))
 
     def get_document(self, document_id: int):
-        document = [d for d in self.documents if d.id == document_id]
-        self.documents.pop(document)
+        return [d for d in self.documents if d.id == document_id]
+
+
+    def __repr__(self):
+        return "\n".join(str(d) for d in self.documents)
