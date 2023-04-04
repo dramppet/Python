@@ -16,10 +16,10 @@ class Vehicle(ABC):
 
 
 class Car(Vehicle):
-    CONDITIONER_ON = 0.9
+    CONDITIONER_ON_AIR = 0.9
 
     def drive(self, distance):
-        consumption = (self.fuel_consumption + Car.CONDITIONER_ON) * distance
+        consumption = (self.fuel_consumption + Car.CONDITIONER_ON_AIR) * distance
 
         if self.fuel_quantity >= consumption:
             self.fuel_quantity -= consumption
