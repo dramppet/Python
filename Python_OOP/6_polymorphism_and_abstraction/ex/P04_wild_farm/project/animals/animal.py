@@ -39,7 +39,7 @@ class Bird(Animal, ABC):
         return f"{self.__class__.__name__} [{self.name}, {self.wing_size}, {self.weight}, {self.food_eaten}]"
 
 
-class Mammal(ABC,Animal):
+class Mammal(Animal, ABC):
     def __init__(self, name, weight, living_region):
         super().__init__(self, name, weight)
         self.living_region = living_region
