@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
-    def __init__(self, name, weight):
+    def __init__(self, name: str, weight: float):
         self.name = name
         self.weight = weight
         self.food_eaten = 0
