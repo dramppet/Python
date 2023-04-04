@@ -30,7 +30,7 @@ class Animal(ABC):
         self.weight += food.quantity * self.gained_weight
         self.food_eaten += food.quantity
 
-class Bird(ABC, Animal):
+class Bird(Animal, ABC):
     def __init__(self, name, weight, wing_size):
         super().__init__(self, name, weight)
         self.wing_size = wing_size
